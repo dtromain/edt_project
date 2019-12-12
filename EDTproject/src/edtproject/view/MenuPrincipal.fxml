@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="apMain" prefHeight="650.0" prefWidth="1210.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edtproject.controller.MenuPrincipalController">
+   <children>
+      <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="483.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem fx:id="miSaveDep" mnemonicParsing="false" onAction="#sauvegarderDependances" text="Enregistrer dépendances" />
+                  <MenuItem fx:id="miLoadDep" mnemonicParsing="false" onAction="#chargerDependances" text="Charger dépendances" />
+                  <MenuItem fx:id="miSaveCours" mnemonicParsing="false" onAction="#sauvegarderCours" text="Enregistrer cours" />
+                  <MenuItem fx:id="miLoadCours" mnemonicParsing="false" onAction="#chargerCours" text="Charger cours" />
+            </items>
+          </Menu>
+          <Menu disable="true" mnemonicParsing="false" text="Edition">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Supprimer" />
+            </items>
+          </Menu>
+            <Menu disable="true" mnemonicParsing="false" text="Vue">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Mon Emploi du Temps" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="btnConnexion" defaultButton="true" layoutX="475.0" mnemonicParsing="false" onAction="#connexion" prefHeight="25.0" prefWidth="260.0" text="Se connecter" />
+      <HBox fx:id="hBoxConnecte" alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="1206.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblNomSession" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="309.0" textAlignment="RIGHT" HBox.hgrow="SOMETIMES">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                     <image>
+                        <Image url="@user-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin></Label>
+            <ImageView fx:id="imgParametres" fitHeight="25.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@settings-icon.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnDeconnexion" mnemonicParsing="false" onAction="#deconnexion" prefHeight="25.0" prefWidth="126.0" text="Se déconnecter" />
+         </children>
+      </HBox>
+      <TabPane fx:id="tpMain" layoutX="-1.0" layoutY="24.0" prefHeight="550.0" prefWidth="1200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="24.0">
+        <tabs>
+            <Tab fx:id="tabEDT" text="Affichage Emploi du temps">
+               <content>
+                  <AnchorPane fx:id="apAffEDT" disable="true" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <fx:include fx:id="AffichageEDT" source="AffichageEDT.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabCreationCours" text="Modification Emploi du temps">
+               <content>
+                  <AnchorPane fx:id="apModifEDT" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="552.0" prefWidth="1200.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" text="Réserve:" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="2.0" right="2.0" />
+                                 </padding>
+                              </Label>
+                              <ScrollPane fx:id="scrollpReserve" fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="101.0" prefWidth="1200.0" vbarPolicy="NEVER">
+                                 <content>
+                                    <FlowPane fx:id="flowpReserve" prefHeight="200.0" prefWidth="200.0" />
+                                 </content></ScrollPane>
+                              <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
+                                 <items>
+                                    <fx:include fx:id="CreationCours" source="CreationCours.fxml" />
+                                    <ScrollPane prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" vmax="0.0" vvalue="1.0">
+                                       <content>
+                                          <fx:include fx:id="AffichageEDT1" source="AffichageEDT.fxml" />
+                                       </content>
+                                    </ScrollPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabCreationSession" text="Création des sessions utilisateurs">
+               <content>
+                  <AnchorPane fx:id="apCreationSession" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <fx:include fx:id="CreationSession" source="CreationSession.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabCreationModule" text="Création des modules">
+               <content>
+                  <AnchorPane fx:id="apCreationModule" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <fx:include fx:id="CreationModule" source="CreationModule.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabCreationGroupe" text="Création des groupes">
+               <content>
+                  <AnchorPane fx:id="apCreationGroupe" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <fx:include fx:id="CreationGroupe" source="CreationGroupe.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabCreationSalle" text="Création des salles">
+               <content>
+                  <AnchorPane fx:id="apCreationSalle" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <fx:include fx:id="CreationSalle" source="CreationSalle.fxml" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

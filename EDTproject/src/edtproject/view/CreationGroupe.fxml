@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="anchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edtproject.controller.CreationGroupeController">
+   <children>
+      <Text layoutX="135.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saisie des groupes">
+         <font>
+            <Font name="Aliquam UltraLight" size="33.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="136.0" layoutX="17.0" layoutY="58.0" stroke="#b0b0b0c0" strokeType="INSIDE" width="505.0" />
+      <Text layoutX="24.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer le nom du groupe de TD en une lettre:" textAlignment="JUSTIFY" wrappingWidth="259.7860075235367">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="textFieldSaisieGroupe" layoutX="304.0" layoutY="68.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="24.0" layoutY="103.0" prefHeight="21.0" prefWidth="250.0" text="Nombre de groupes de TP associés :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="spinNbTP" editable="true" layoutX="333.0" layoutY="101.0" prefHeight="25.0" prefWidth="92.0" />
+      <Label layoutX="43.0" layoutY="140.0" text="Année associée:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="radioBAnnee1" layoutX="149.0" layoutY="132.0" mnemonicParsing="false" text="Année 1">
+         <toggleGroup>
+            <ToggleGroup fx:id="groupAnnee" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radioBAnnee2" layoutX="149.0" layoutY="159.0" mnemonicParsing="false" text="Année 2" toggleGroup="$groupAnnee" />
+      <Button fx:id="ButtonAjouterGroupe" layoutX="333.0" layoutY="205.0" mnemonicParsing="false" onAction="#ajouterGroupe" prefHeight="37.0" prefWidth="159.0" text="Ajouter le groupe">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

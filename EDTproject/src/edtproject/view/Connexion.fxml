@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edtproject.controller.ConnexionController">
+   <children>
+      <Text fx:id="textConnexionEDTProject" layoutX="61.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connexion à EDT Project">
+         <font>
+            <Font name="Aliquam UltraLight" size="35.0" />
+         </font>
+      </Text>
+      <Text fx:id="textIdentifiant" layoutX="190.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant">
+         <font>
+            <Font name="Aliquam UltraLight" size="27.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtFieldID" layoutX="123.0" layoutY="160.0" prefHeight="41.0" prefWidth="250.0" />
+      <Text fx:id="textMotDePasse" layoutX="167.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe">
+         <font>
+            <Font name="Aliquam UltraLight" size="27.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="passwordFieldMDP" layoutX="123.0" layoutY="280.0" prefHeight="36.0" prefWidth="250.0" />
+      <Button fx:id="btnSeConnecter" layoutX="179.0" layoutY="350.0" mnemonicParsing="false" onAction="#seConnecter" prefHeight="6.0" prefWidth="144.0" text="Se connecter">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Text fx:id="textErreur" fill="#f20d0d" layoutX="130.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Erreur, identifiant ou mot de passe incorrect." />
+   </children>
+</AnchorPane>

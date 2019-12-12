@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="anchorPane" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edtproject.controller.CreationCoursController">
+   <children>
+      <Text layoutX="91.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saisie des cours">
+         <font>
+            <Font name="Aliquam UltraLight" size="33.0" />
+         </font>
+      </Text>
+      <Button fx:id="boutonAjouterCoursFinal" layoutX="239.0" layoutY="357.0" mnemonicParsing="false" onAction="#ajouterCoursFinal" prefHeight="37.0" prefWidth="159.0" text="Ajouter le cours">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="282.0" layoutX="15.0" layoutY="67.0" stroke="#b0b0b0c0" strokeType="INSIDE" width="402.0" />
+      <Text fx:id="textSelectionnerModule" layoutX="25.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner le module :" wrappingWidth="235.78600752353668">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="textSelectionnerTypeCours" layoutX="25.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner le type de cours :" wrappingWidth="249.78600752353668">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="textSelectionnerGroupe" layoutX="25.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner durée :" wrappingWidth="180.78600752353668">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="textSelectionnerSemaine" layoutX="25.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sélectionner la semaine :" wrappingWidth="209.45100456476212">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="comboBoxSemaine" layoutX="240.0" layoutY="225.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboBoxTypeCours" layoutX="240.0" layoutY="161.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboBoxModule" layoutX="240.0" layoutY="97.0" prefWidth="150.0" />
+      <Spinner fx:id="spinnerHeure" editable="true" layoutX="240.0" layoutY="288.0" prefHeight="25.0" prefWidth="61.0" />
+      <Spinner fx:id="spinnerMinute" editable="true" layoutX="329.0" layoutY="288.0" prefHeight="25.0" prefWidth="61.0" />
+      <Text layoutX="312.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h" />
+      <Text layoutX="395.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="m" />
+   </children>
+</AnchorPane>
